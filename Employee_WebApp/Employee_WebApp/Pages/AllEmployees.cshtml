@@ -1,0 +1,33 @@
+﻿@page
+@model Employee_WebApp.Pages.AllEmployeesModel
+@{
+}
+
+<h2>All Employees</h2>
+
+<a class="btn btn-primary" href="/NewEmployee">New</a>
+<table class="table">
+    <thead>
+       <tr>
+           <td>ID</td>
+           <td>Name</td>
+           <td>Surname</td>
+           <td>Salary</td>
+           <td>DOB</td>
+           <td>Age</td>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach (var em in Model.emList)
+        {
+            <tr>
+                <td>@em.EmpNumber</td>
+                <td>@em.Name</td>
+                <td>@em.Surname</td>
+                <td>@em.Salary.ToString("C2")</td>
+                <td>@em.DOB</td>
+                <td>@em.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
